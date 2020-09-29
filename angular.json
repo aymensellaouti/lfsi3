@@ -119,6 +119,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "lfsi3"
+    }
+  },
+  "defaultProject": "lfsi3",
+  "cli": {
+    "analytics": "46920a62-755f-4bed-8986-e8cfc29dde86"
+  }
 }
