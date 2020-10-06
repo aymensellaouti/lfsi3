@@ -1,0 +1,13 @@
+<div>
+  <p [style.color]="couleur" [hidden]="isHidden">{{ name }} works!</p>
+
+  <button (click)="afficherCacher()">afficher / cacher</button>
+  <input
+    #monInput
+    type="text" />
+
+  <p
+    (mouseenter)="show(monInput.value)"
+  >Dans mon input il est écrit :
+  {{message}}</p>
+</div>
