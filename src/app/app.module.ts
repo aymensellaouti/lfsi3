@@ -15,6 +15,10 @@ import { FilsComponent } from './components/fils/fils.component';
 import { PereComponent } from './components/pere/pere.component';
 import { PereColorComponent } from './components/pere-color/pere-color.component';
 import { FilsColorComponent } from './components/fils-color/fils-color.component';
+import { CvComponent } from './cv/cv/cv.component';
+import { ItemComponent } from './cv/item/item.component';
+import { ListComponent } from './cv/list/list.component';
+import { CarteComponent } from './cv/carte/carte.component';
 
 @NgModule({
   declarations: [
@@ -30,6 +34,10 @@ import { FilsColorComponent } from './components/fils-color/fils-color.component
     PereComponent,
     PereColorComponent,
     FilsColorComponent,
+    CvComponent,
+    ItemComponent,
+    ListComponent,
+    CarteComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule],
   providers: [],
