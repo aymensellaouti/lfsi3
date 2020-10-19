@@ -7,16 +7,19 @@
       <div class="user">
         <img
           class="img-circle"
-          src="assets/images/rotating_card_profile3.png"
+          src="assets/images/{{personne?.path}}"
         />
       </div>
       <div class="content">
         <div class="main">
-          <h3 class="name"></h3>
-          <p class="profession"></p>
+          <h3 class="name">
+            {{personne?.firstname}} {{personne?.name}}
+          </h3>
+          <p class="profession">
+            {{personne?.job}}
+          </p>
           <p class="text-center">
-            "I'm the new Sinatra, and since I made it here I can make it
-            anywhere, yeah, they love me everywhere"
+           {{personne?.age}}
           </p>
         </div>
         <div class="footer">
@@ -42,7 +45,7 @@
               <p>Followers</p>
             </div>
             <div class="stats">
-              <h4>114</h4>
+              <h4>{{personne?.age}}</h4>
               <p>Following</p>
             </div>
             <div class="stats">

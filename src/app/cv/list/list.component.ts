@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { Personne } from '../model/personne';
 
 @Component({
@@ -8,6 +8,7 @@ import { Personne } from '../model/personne';
 })
 export class ListComponent implements OnInit {
   personnes: Personne[] = [];
+  @Output() fowardSelectedPerson = new EventEmitter();
   constructor() {}
 
   ngOnInit(): void {
@@ -31,5 +32,9 @@ export class ListComponent implements OnInit {
         'rotating_card_profile2.png'
       ),
     ];
+  }
+
+  forwardPersonne(selectedPersonne: Personne) {
+    this.fowardSelectedPerson.emit(selectedPersonne);
   }
 }

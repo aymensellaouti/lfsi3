@@ -19,6 +19,8 @@ import { CvComponent } from './cv/cv/cv.component';
 import { ItemComponent } from './cv/item/item.component';
 import { ListComponent } from './cv/list/list.component';
 import { CarteComponent } from './cv/carte/carte.component';
+import { NgstyleExampleComponent } from './directives/ngstyle-example/ngstyle-example.component';
+import { MiniWordComponent } from './directives/mini-word/mini-word.component';
 
 @NgModule({
   declarations: [
@@ -38,6 +40,8 @@ import { CarteComponent } from './cv/carte/carte.component';
     ItemComponent,
     ListComponent,
     CarteComponent,
+    NgstyleExampleComponent,
+    MiniWordComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule],
   providers: [],
