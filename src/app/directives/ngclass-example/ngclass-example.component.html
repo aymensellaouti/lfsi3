@@ -1,0 +1,21 @@
+<p
+  appHighlight
+  [ngClass]="{
+    eteinte: isAllume,
+    allumee: !isAllume
+  }"
+>
+  ngclass-example works!
+</p>
+
+<p appHighlight [in]="'red'" [out]="'yellow'">Esperence</p>
+
+<p appHighlight [in]="'white'" [out]="'red'">Ca et ESS</p>
+
+<p appHighlight [in]="'white'" [out]="'black'">Css</p>
+
+<button (click)="allumerEteindre()" class="btn btn-primary">
+  {{ title }}
+</button>
+
+<input type="text" appRainbow />

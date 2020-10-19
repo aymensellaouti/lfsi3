@@ -21,6 +21,9 @@ import { ListComponent } from './cv/list/list.component';
 import { CarteComponent } from './cv/carte/carte.component';
 import { NgstyleExampleComponent } from './directives/ngstyle-example/ngstyle-example.component';
 import { MiniWordComponent } from './directives/mini-word/mini-word.component';
+import { NgclassExampleComponent } from './directives/ngclass-example/ngclass-example.component';
+import { HighlightDirective } from './directives/highlight.directive';
+import { RainbowDirective } from './directives/rainbow.directive';
 
 @NgModule({
   declarations: [
@@ -42,6 +45,9 @@ import { MiniWordComponent } from './directives/mini-word/mini-word.component';
     CarteComponent,
     NgstyleExampleComponent,
     MiniWordComponent,
+    NgclassExampleComponent,
+    HighlightDirective,
+    RainbowDirective,
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule],
   providers: [],
