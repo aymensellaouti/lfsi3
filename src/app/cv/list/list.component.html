@@ -1,8 +1,7 @@
 <ul class="list-group">
   <app-item
+    [odd]="isOdd"
+    *ngFor="let itemPersonne of personnes; let isOdd = odd"
     (selectPersonne)="forwardPersonne($event)"
-    [personne]="personnes[0]"></app-item>
-  <app-item
-  (selectPersonne)="forwardPersonne($event)"
-  [personne]="personnes[1]"></app-item>
+    [personne]="itemPersonne"></app-item>
 </ul>

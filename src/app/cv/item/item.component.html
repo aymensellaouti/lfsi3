@@ -1,4 +1,8 @@
 <li
+[ngClass]="{
+  'list-group-item-danger': odd,
+  'list-group-item-warning': !odd
+}"
 (click)="selecteItem()"
 class="list-group-item">
   <img

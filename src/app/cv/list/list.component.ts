@@ -31,6 +31,15 @@ export class ListComponent implements OnInit {
         'teacher2',
         'rotating_card_profile2.png'
       ),
+      new Personne(
+        2,
+        'sellaouti2',
+        'aymen2',
+        38,
+        4321,
+        'teacher2',
+        'rotating_card_profile2.png'
+      ),
     ];
   }
 

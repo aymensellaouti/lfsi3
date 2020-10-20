@@ -24,6 +24,7 @@ import { MiniWordComponent } from './directives/mini-word/mini-word.component';
 import { NgclassExampleComponent } from './directives/ngclass-example/ngclass-example.component';
 import { HighlightDirective } from './directives/highlight.directive';
 import { RainbowDirective } from './directives/rainbow.directive';
+import { TestngIFComponent } from './directives/testng-if/testng-if.component';
 
 @NgModule({
   declarations: [
@@ -48,6 +49,7 @@ import { RainbowDirective } from './directives/rainbow.directive';
     NgclassExampleComponent,
     HighlightDirective,
     RainbowDirective,
+    TestngIFComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule],
   providers: [],

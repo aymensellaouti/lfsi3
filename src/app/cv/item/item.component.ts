@@ -4,20 +4,17 @@ import { Personne } from './../model/personne';
 @Component({
   selector: 'app-item',
   templateUrl: './item.component.html',
-  styleUrls: ['./item.component.css']
+  styleUrls: ['./item.component.css'],
 })
 export class ItemComponent implements OnInit {
+  @Input() odd = true;
   @Input() personne: Personne;
   @Output() selectPersonne = new EventEmitter();
-  constructor() { }
+  constructor() {}
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void {}
 
   selecteItem() {
-    this.selectPersonne.emit(
-      this.personne
-    );
+    this.selectPersonne.emit(this.personne);
   }
-
 }
