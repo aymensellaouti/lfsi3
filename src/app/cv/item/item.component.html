@@ -6,11 +6,11 @@
 (click)="selecteItem()"
 class="list-group-item">
   <img
-   src="assets/images/{{personne.path}}"
+   src="assets/images/{{personne.path|defaultImage}}"
    width="50px"
    height="50px"
    class="rounded-circle"
   >
-  {{personne.name}}
+  {{personne.name|slice:2:5|uppercase}}
   {{personne.firstname}}
 </li>

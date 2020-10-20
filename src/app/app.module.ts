@@ -25,6 +25,8 @@ import { NgclassExampleComponent } from './directives/ngclass-example/ngclass-ex
 import { HighlightDirective } from './directives/highlight.directive';
 import { RainbowDirective } from './directives/rainbow.directive';
 import { TestngIFComponent } from './directives/testng-if/testng-if.component';
+import { RandomPipePipe } from './pipes/random-pipe.pipe';
+import { DefaultImagePipe } from './pipes/default-image.pipe';
 
 @NgModule({
   declarations: [
@@ -50,6 +52,8 @@ import { TestngIFComponent } from './directives/testng-if/testng-if.component';
     HighlightDirective,
     RainbowDirective,
     TestngIFComponent,
+    RandomPipePipe,
+    DefaultImagePipe,
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule],
   providers: [],

@@ -7,19 +7,17 @@
       <div class="user">
         <img
           class="img-circle"
-          src="assets/images/{{personne?.path}}"
+          src="assets/images/{{ personne?.path | defaultImage }}"
         />
       </div>
       <div class="content">
         <div class="main">
-          <h3 class="name">
-            {{personne?.firstname}} {{personne?.name}}
-          </h3>
+          <h3 class="name">{{ personne?.firstname }} {{ personne?.name }}</h3>
           <p class="profession">
-            {{personne?.job}}
+            {{ personne?.job }}
           </p>
           <p class="text-center">
-           {{personne?.age}}
+            {{ personne?.age }}
           </p>
         </div>
         <div class="footer">
@@ -45,7 +43,7 @@
               <p>Followers</p>
             </div>
             <div class="stats">
-              <h4>{{personne?.age}}</h4>
+              <h4>{{ personne?.age }}</h4>
               <p>Following</p>
             </div>
             <div class="stats">
