@@ -27,6 +27,7 @@ import { RainbowDirective } from './directives/rainbow.directive';
 import { TestngIFComponent } from './directives/testng-if/testng-if.component';
 import { RandomPipePipe } from './pipes/random-pipe.pipe';
 import { DefaultImagePipe } from './pipes/default-image.pipe';
+import { TodoComponent } from './todo/component/todo/todo.component';
 
 @NgModule({
   declarations: [
@@ -54,6 +55,7 @@ import { DefaultImagePipe } from './pipes/default-image.pipe';
     TestngIFComponent,
     RandomPipePipe,
     DefaultImagePipe,
+    TodoComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule],
   providers: [],

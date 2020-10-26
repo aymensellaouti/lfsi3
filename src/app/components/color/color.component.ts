@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { LoggerService } from './../../serviecs/logger.service';
 
 @Component({
   selector: 'app-color',
@@ -8,9 +9,12 @@ import { Component, OnInit } from '@angular/core';
 export class ColorComponent implements OnInit {
   defaultColor = 'blue';
   color = this.defaultColor;
-  constructor() { }
+  constructor(
+    private loggerService: LoggerService
+  ) { }
 
   ngOnInit(): void {
+    this.loggerService.logger('Bienvenu dans color component');
   }
   changeColor(newColor: string ) {
     this.color = newColor;
