@@ -1,0 +1,18 @@
+username : <input
+  [(ngModel)]="username"
+  type="text" class="form-control">
+password : <input
+  [(ngModel)]="password"
+  type="password" class="form-control">
+
+<div
+  *ngIf="errorMessage.length"
+  class="alert alert-danger">
+  {{errorMessage}}
+</div>
+
+<button
+  (click)="login()"
+  class="btn btn-success">
+  Login
+</button>

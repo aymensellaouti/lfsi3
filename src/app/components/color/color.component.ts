@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { LoggerService } from './../../serviecs/logger.service';
+import { TodoService } from './../../todo/services/todo.service';
 
 @Component({
   selector: 'app-color',
@@ -10,7 +11,8 @@ export class ColorComponent implements OnInit {
   defaultColor = 'blue';
   color = this.defaultColor;
   constructor(
-    private loggerService: LoggerService
+    private loggerService: LoggerService,
+    private todoService: TodoService
   ) { }
 
   ngOnInit(): void {
@@ -21,6 +23,7 @@ export class ColorComponent implements OnInit {
   }
   reset() {
     this.color = this.defaultColor;
+    this.todoService.log();
   }
 
 }
