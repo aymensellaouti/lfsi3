@@ -31,6 +31,11 @@ import { TodoComponent } from './todo/component/todo/todo.component';
 import { EmbaucheComponent } from './cv/embauche/embauche.component';
 import { HeaderComponent } from './header/header.component';
 import { LoginComponent } from './login/login.component';
+import { RouterSimulatorComponent } from './router-simulator/router-simulator.component';
+import { PersonneDetailsComponent } from './cv/personne-details/personne-details.component';
+import { AddPersonneComponent } from './cv/add-personne/add-personne.component';
+import { DeletePersonneComponent } from './cv/delete-personne/delete-personne.component';
+import { NF404Component } from './nf404/nf404.component';
 
 @NgModule({
   declarations: [
@@ -62,6 +67,11 @@ import { LoginComponent } from './login/login.component';
     EmbaucheComponent,
     HeaderComponent,
     LoginComponent,
+    RouterSimulatorComponent,
+    PersonneDetailsComponent,
+    AddPersonneComponent,
+    DeletePersonneComponent,
+    NF404Component,
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule],
   providers: [],
