@@ -18,11 +18,23 @@ export class CvService {
         'teacher2',
         'rotating_card_profile2.png'
       ),
-      new Personne(2, 'sellaouti2', 'aymen2', 43, 4321, 'teacher2', ''),
+      new Personne(3, 'sellaouti2', 'aymen2', 43, 4321, 'teacher2', ''),
     ];
   }
 
   getPersonnes(): Personne[] {
     return this.personnes;
+  }
+  getPersonneById(id: number): Personne {
+    return this.personnes.find((personne) => personne.id === id);
+  }
+  deletePersonne(personne: Personne) {
+    const index = this.personnes.indexOf(personne);
+    if(index < 0) {
+      return 0;
+    } else {
+      this.personnes.splice(index, 1);
+      return 1;
+    }
   }
 }

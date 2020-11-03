@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Personne } from '../model/personne';
 import { EmbaucheService } from './../services/embauche.service';
 
@@ -10,7 +11,8 @@ import { EmbaucheService } from './../services/embauche.service';
 export class CarteComponent implements OnInit {
   @Input() personne: Personne = null;
   constructor(
-    private embaucheService: EmbaucheService
+    private embaucheService: EmbaucheService,
+    private router: Router
   ) { }
 
   ngOnInit(): void {
@@ -18,6 +20,10 @@ export class CarteComponent implements OnInit {
 
   embaucher() {
     this.embaucheService.embaucher(this.personne);
+  }
+
+  detail() {
+    this.router.navigate(['cv', this.personne.id]);
   }
 
 }
