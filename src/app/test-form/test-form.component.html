@@ -1,0 +1,14 @@
+<form #testForm="ngForm">
+  name : <input type="text" required ngModel name="name" class="form-control" />
+  age :
+  <input
+  pattern="[0-1]?\d{1,2}"
+  type="text" required ngModel name="age" class="form-control" />
+  Email :
+  <input type="email" ngModel name="email" email class="form-control" />
+  Job :
+  <input type="text" ngModel required name="job" class="form-control" />
+  <button (click)="processForm(testForm)" class="btn btn-warning">
+    Submit
+  </button>
+</form>

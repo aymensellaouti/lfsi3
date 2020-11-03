@@ -1,18 +1,33 @@
-username : <input
-  [(ngModel)]="username"
-  type="text" class="form-control">
-password : <input
-  [(ngModel)]="password"
-  type="password" class="form-control">
-
-<div
+<form #loginForm="ngForm">
+  Email :
+  <input
+    ngModel
+    email
+    required
+    name="email"
+    type="email"
+    class="form-control"
+  />
+  password :
+  <input
+    type="password"
+    required
+    ngModel
+    name="password"
+    minlength="4"
+    class="form-control"
+  />
+  <!-- <div
   *ngIf="errorMessage.length"
   class="alert alert-danger">
   {{errorMessage}}
-</div>
+</div> -->
 
-<button
-  (click)="login()"
-  class="btn btn-success">
-  Login
-</button>
+  <button
+    [disabled]="loginForm.invalid"
+    (click)="login(loginForm)"
+    class="btn btn-success"
+  >
+    Login
+  </button>
+</form>

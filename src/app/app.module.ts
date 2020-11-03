@@ -36,6 +36,7 @@ import { PersonneDetailsComponent } from './cv/personne-details/personne-details
 import { AddPersonneComponent } from './cv/add-personne/add-personne.component';
 import { DeletePersonneComponent } from './cv/delete-personne/delete-personne.component';
 import { NF404Component } from './nf404/nf404.component';
+import { TestFormComponent } from './test-form/test-form.component';
 
 @NgModule({
   declarations: [
@@ -72,6 +73,7 @@ import { NF404Component } from './nf404/nf404.component';
     AddPersonneComponent,
     DeletePersonneComponent,
     NF404Component,
+    TestFormComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule],
   providers: [],
