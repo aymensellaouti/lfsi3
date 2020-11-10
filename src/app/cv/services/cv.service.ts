@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { Subject } from 'rxjs';
 import { Personne } from '../model/personne';
 
 @Injectable({
@@ -6,9 +7,14 @@ import { Personne } from '../model/personne';
 })
 export class CvService {
   private personnes: Personne[];
+
+  //C'est une source de données
+  // On peut s'inscrire pour recvoire les infos (Observable)
+  // On peut broadcaster une nouvelle information (observer via la methode next)
+  public selectItemSubject = new Subject<Personne>();
   constructor() {
     this.personnes = [
-      new Personne(1, 'sellaouti', 'aymen', 38, 1234, 'teacher', '        '),
+      new Personne(1, 'sellaouti', 'aymen', 38, 1234, 'teacher', 'as.jpg'),
       new Personne(
         2,
         'sellaouti2',
@@ -30,11 +36,16 @@ export class CvService {
   }
   deletePersonne(personne: Personne) {
     const index = this.personnes.indexOf(personne);
-    if(index < 0) {
+    if (index < 0) {
       return 0;
     } else {
       this.personnes.splice(index, 1);
       return 1;
     }
+  }
+
+  // Broadcaster l'information de selection et envoyer la personne sélectionnée
+  public selectPersonne(personne: Personne) {
+    this.selectItemSubject.next(personne);
   }
 }

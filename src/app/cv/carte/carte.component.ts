@@ -2,20 +2,25 @@ import { Component, Input, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Personne } from '../model/personne';
 import { EmbaucheService } from './../services/embauche.service';
+import { CvService } from './../services/cv.service';
 
 @Component({
   selector: 'app-carte',
   templateUrl: './carte.component.html',
-  styleUrls: ['./carte.component.css']
+  styleUrls: ['./carte.component.css'],
 })
 export class CarteComponent implements OnInit {
-  @Input() personne: Personne = null;
+  personne: Personne = null;
   constructor(
     private embaucheService: EmbaucheService,
-    private router: Router
-  ) { }
+    private router: Router,
+    private cvService: CvService
+  ) {}
 
   ngOnInit(): void {
+    this.cvService.selectItemSubject.subscribe(
+      (personne) => this.personne = personne
+    );
   }
 
   embaucher() {
@@ -25,5 +30,4 @@ export class CarteComponent implements OnInit {
   detail() {
     this.router.navigate(['cv', this.personne.id]);
   }
-
 }

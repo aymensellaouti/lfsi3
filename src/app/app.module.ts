@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import {HttpClientModule} from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -37,6 +38,9 @@ import { AddPersonneComponent } from './cv/add-personne/add-personne.component';
 import { DeletePersonneComponent } from './cv/delete-personne/delete-personne.component';
 import { NF404Component } from './nf404/nf404.component';
 import { TestFormComponent } from './test-form/test-form.component';
+import { ObservableComponent } from './components/observable/observable.component';
+import { SliderComponent } from './components/slider/slider.component';
+import { HttpComponent } from './http/http.component';
 
 @NgModule({
   declarations: [
@@ -74,8 +78,11 @@ import { TestFormComponent } from './test-form/test-form.component';
     DeletePersonneComponent,
     NF404Component,
     TestFormComponent,
+    ObservableComponent,
+    SliderComponent,
+    HttpComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule, FormsModule],
+  imports: [BrowserModule, AppRoutingModule, FormsModule, HttpClientModule],
   providers: [],
   bootstrap: [AppComponent],
 })

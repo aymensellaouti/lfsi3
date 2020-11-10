@@ -1,10 +1,18 @@
+<div class="row alert alert-primary">
+  Nombre de click : {{ nombreDePersonneSelectionne }}
+  <span
+    *ngIf="selected.length"
+  >
+    La dernière personne sélectionnée est {{selected}}
+  </span>
+</div>
 <div class="row">
   <div class="col-4">
-    <app-list (fowardSelectedPerson)="getSelectedPersonne($event)"></app-list>
+    <app-list></app-list>
   </div>
 
   <div class="col">
-    <app-carte [personne]="selectedPersonne"></app-carte>
+    <app-carte></app-carte>
   </div>
 </div>
 <div class="row">

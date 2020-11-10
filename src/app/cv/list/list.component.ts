@@ -9,16 +9,9 @@ import { CvService } from './../services/cv.service';
 })
 export class ListComponent implements OnInit {
   personnes: Personne[] = [];
-  @Output() fowardSelectedPerson = new EventEmitter();
-  constructor(
-    private cvService: CvService
-  ) {}
+  constructor(private cvService: CvService) {}
 
   ngOnInit(): void {
     this.personnes = this.cvService.getPersonnes();
-  }
-
-  forwardPersonne(selectedPersonne: Personne) {
-    this.fowardSelectedPerson.emit(selectedPersonne);
   }
 }

@@ -2,6 +2,5 @@
   <app-item
     [odd]="isOdd"
     *ngFor="let itemPersonne of personnes; let isOdd = odd"
-    (selectPersonne)="forwardPersonne($event)"
     [personne]="itemPersonne"></app-item>
 </ul>
