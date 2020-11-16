@@ -1,4 +1,4 @@
-import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Personne } from '../model/personne';
 import { CvService } from './../services/cv.service';
 
@@ -12,6 +12,12 @@ export class ListComponent implements OnInit {
   constructor(private cvService: CvService) {}
 
   ngOnInit(): void {
-    this.personnes = this.cvService.getPersonnes();
+    this.cvService.getPersonnes().subscribe(
+      (personnes) => this.personnes = personnes,
+      (erreur) => {
+        this.personnes = this.cvService.getFakePersonnes();
+        alert(`Problème d'accés à l'api les données sont fake`);
+      }
+    );
   }
 }

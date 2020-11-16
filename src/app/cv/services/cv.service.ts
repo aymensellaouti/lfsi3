@@ -1,6 +1,9 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Subject } from 'rxjs';
+import { Observable, Subject } from 'rxjs';
 import { Personne } from '../model/personne';
+
+const CV_API = 'https://immense-citadel-91115.herokuapp.com/api/personnes/';
 
 @Injectable({
   providedIn: 'root',
@@ -12,7 +15,7 @@ export class CvService {
   // On peut s'inscrire pour recvoire les infos (Observable)
   // On peut broadcaster une nouvelle information (observer via la methode next)
   public selectItemSubject = new Subject<Personne>();
-  constructor() {
+  constructor(private http: HttpClient) {
     this.personnes = [
       new Personne(1, 'sellaouti', 'aymen', 38, 1234, 'teacher', 'as.jpg'),
       new Personne(
@@ -28,11 +31,18 @@ export class CvService {
     ];
   }
 
-  getPersonnes(): Personne[] {
+  getFakePersonnes(): Personne[] {
     return this.personnes;
   }
-  getPersonneById(id: number): Personne {
+
+  getPersonnes(): Observable<Personne[]> {
+    return this.http.get<Personne[]>(CV_API);
+  }
+  getFakePersonneById(id: number): Personne {
     return this.personnes.find((personne) => personne.id === id);
+  }
+  getPersonneById(id): Observable<Personne> {
+    return this.http.get<Personne>(CV_API + id);
   }
   deletePersonne(personne: Personne) {
     const index = this.personnes.indexOf(personne);

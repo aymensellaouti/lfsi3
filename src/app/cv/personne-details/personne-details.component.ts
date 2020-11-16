@@ -17,10 +17,13 @@ export class PersonneDetailsComponent implements OnInit {
   ) {}
   ngOnInit(): void {
     this.activatedRoute.params.subscribe((lesRouteParams) => {
-      this.personne = this.cvService.getPersonneById(+lesRouteParams.id);
-      if (!this.personne) {
-        this.router.navigate(['cv']);
-      }
+       this.cvService.getPersonneById(+lesRouteParams.id).subscribe(
+        (personne) => this.personne = personne,
+        (erreur) => {
+          console.log(`Personne d'id ${+lesRouteParams.id} not founde`);
+          this.router.navigate(['cv']);
+        }
+       );
     });
   }
   delete() {
