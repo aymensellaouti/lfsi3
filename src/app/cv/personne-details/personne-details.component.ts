@@ -27,9 +27,9 @@ export class PersonneDetailsComponent implements OnInit {
     });
   }
   delete() {
-    const isDeleted = this.cvService.deletePersonne(this.personne);
-    if (isDeleted) {
-      this.router.navigate(['cv']);
-    }
+    this.cvService.deletePersonne(this.personne).subscribe(
+      (reponse) =>       this.router.navigate(['cv']),
+      (erreur) => console.log(erreur)
+    )
   }
 }
