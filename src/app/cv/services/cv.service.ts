@@ -1,4 +1,4 @@
-import { HttpClient, HttpParams } from '@angular/common/http';
+import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable, Subject } from 'rxjs';
 import { Personne } from '../model/personne';
@@ -48,6 +48,14 @@ export class CvService {
     const token = localStorage.getItem('token');
     const params = new HttpParams().set('access_token', token);
     return this.http.delete<any>(CV_API + personne.id, { params });
+  }
+
+  addPersonne(personne: Personne): Observable<Personne> {
+    const token = localStorage.getItem('token');
+    /*     const params = new HttpParams().set('access_token', token);
+     */
+    const headers = new HttpHeaders().set('Authorization', token);
+    return this.http.post<Personne>(CV_API, personne, { headers });
   }
 
   // Broadcaster l'information de selection et envoyer la personne sélectionnée

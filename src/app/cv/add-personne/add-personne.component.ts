@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
+import { Router } from '@angular/router';
+import { CvService } from './../services/cv.service';
 
 @Component({
   selector: 'app-add-personne',
@@ -7,8 +9,13 @@ import { NgForm } from '@angular/forms';
   styleUrls: ['./add-personne.component.css'],
 })
 export class AddPersonneComponent implements OnInit {
-  constructor() {}
+  constructor(private cvService: CvService, private router: Router) {}
 
   ngOnInit(): void {}
-  addPersonne(formumaire: NgForm) {}
+  addPersonne(formumaire: NgForm) {
+    this.cvService.addPersonne(formumaire.value).subscribe(
+      (personne) => this.router.navigate(['cv']),
+      (erreur) => console.log(erreur)
+    );
+  }
 }
